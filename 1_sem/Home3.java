@@ -10,6 +10,7 @@ public class Home3 {
         float y = sc.nextFloat();
         System.out.print("Enter an operator(like: +, -, *, /): ");
         String z = sc.next();
+        sc.close();
         switch (z){
             case "+":
                 System.out.printf("Result: x + y = %.2f + %.2f = %.3f\n", x, y, x+y);
