@@ -21,7 +21,7 @@ public class Home4 {
         for (int i = ind2+1; i < eq.length(); i++) {
             res += eq.charAt(i);
         }
-        int res_t;
+        int res_t = 0;
         int count = 0;
         String a2 = null, b2 = null;
         int l = 0,r = 0;
@@ -34,14 +34,10 @@ public class Home4 {
                     b2 = b.replace("?", String.format("%d",j));
                     res_t = Integer.parseInt(a2) + Integer.parseInt(b2);
 //                    System.out.printf("%d + %d = %d\n", Integer.parseInt(a2), Integer.parseInt(b2), res_t);
-                    if (res_t == Integer.parseInt(res)) {
-                        break calcul;
-                    }else count++;
+                    if (res_t == Integer.parseInt(res)) break calcul;
                 }
             }
-        if (count == 100) System.out.println("Combination not found");
-        else if ((a.length() == 1 || b.length() == 1) && count == 90) System.out.println("Combination not found");
-        else if ((a.length() == 1 && b.length() == 1) && count == 81) System.out.println("Combination not found");
-        else System.out.printf("Combination: %d + %d = %d", Integer.parseInt(a2), Integer.parseInt(b2), Integer.parseInt(res));
+        if (res_t == Integer.parseInt(res)) System.out.printf("Combination: %d + %d = %d", Integer.parseInt(a2), Integer.parseInt(b2), Integer.parseInt(res));
+        else System.out.println("Combination not found");
     }
 }
