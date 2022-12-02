@@ -15,18 +15,15 @@ public class home3 {
             JSONObject jsO = (JSONObject) pars.parse(new FileReader("Home3.json"));
             String f = jsO.toString().replaceAll("\\{", "").replaceAll("}", "").replaceAll("\"", "");
             f = f.replaceAll("предмет:", "").replaceAll("фамилия:", "");
-//            System.out.println(f);
 
             String[] repl = {"p1:",",p2:",",p3:"};
             for (int i = 0; i < repl.length; i++) f = f.replaceAll(repl[i], "");
-//            System.out.println(f);
 
-            StringBuilder s = new StringBuilder("Студент ");
+            StringBuilder s = new StringBuilder();
             String[] arr = f.split("оценка:");
-            String[] shot;
-            int j = 0;
             for (int i = 1; i < arr.length; i++) {
                 String[] k = arr[i].split(",");
+                s.append("Студент ");
                 s.append(k[2]);
                 s.append(" получил " + k[0]);
                 s.append(" по предмету " + k[1] + "\n");
