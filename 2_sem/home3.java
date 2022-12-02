@@ -22,20 +22,18 @@ public class home3 {
 //            System.out.println(f);
 
             StringBuilder s = new StringBuilder("Студент ");
-
             String[] arr = f.split("оценка:");
             String[] shot;
             int j = 0;
-            for (int i = 0; i < arr.length; i++) {
-                System.out.println(arr[i]);
-                String k = arr[i];
-                shot[j] = k.split(",");
-                j++;
+            for (int i = 1; i < arr.length; i++) {
+                String[] k = arr[i].split(",");
+                s.append(k[2]);
+                s.append(" получил " + k[0]);
+                s.append(" по предмету " + k[1] + "\n");
+
             }
 
-
-
-
+            System.out.println(s);
 
         }catch (IOException e){
             e.getStackTrace();
